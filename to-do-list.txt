@@ -1,0 +1,19 @@
+
+
+
+					     	==================== To-do List =======================
+
+Note :-
+	C - Create
+	R - Retrieve
+	U - Update
+	D - Delete
+
+1. 	Posts (UD)
+2. 	Comments (UD)
+3. 	a). User Profile (U) - {password & recovery}
+	
+4. 	Group module
+5. 	Wars
+
+7. 	Code Compiler (Integration with the Texteditor and Workspace <> )

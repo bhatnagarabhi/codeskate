@@ -1,0 +1,28 @@
+<form name="" id="frm-change-pic" method="post">
+	<?php if(!empty($user_pic)) { ?>
+		<center><img id="user_pic_preview" height="250" width="250" src="data:image/png;base64,<?php echo base64_encode($user_pic); ?>" class="img-responsive"></center><br> 
+	<?php } else { ?>
+		<center><img id="user_pic_preview" height="250" width="250" src="images/ben.png" class="img-responsive"></center><br> 
+	<?php } ?>
+	<center>
+		<input type="file" accept="image/*" required="required" name="user_pic" class="form-control font-bold hidden" id="user_pic">
+		<button for="user_pic" id="btn_user_pic" type="button" class="btn btn-primary btn-lg font-bold"><i class="fa fa-refresh"></i> Change</button>
+		<button class="btn btn-lg font-bold btn-success" type="submit" id="btn-change-pic"><i class="fa fa-check"> Confirm</i></button>
+	</center>
+</form>
+
+
+
+
+
+$('#user_pic').change(function() {
+	var reader = new FileReader();
+
+	reader.onload = function (e) {
+	    // get loaded data and render thumbnail.
+	    document.getElementById("user_pic_preview").src = e.target.result;
+	};
+	// read the image file as a data URL.
+	reader.readAsDataURL(this.files[0]);
+	$('#btn-change-pic').removeAttr('disabled');
+});
