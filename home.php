@@ -119,6 +119,9 @@
 	var div_id=0;
 	$('.content-link').click(function(event) {
 		div_id 		= $(this).val();
+		$('#loading-overlay').css({
+			display: 'block'
+		});
 		if(div_id==8) {
 			window.location = "inc/logout.php";
 		}
@@ -128,7 +131,18 @@
 			dataType: 'html',
 			data: 'url_id='+div_id,
 			success: function(response, status, http){
+				$('html, body').animate({
+				          scrollTop: $('#nav-rightbar').offset().top
+				        }, 1000);
 				$('#content').hide().html(response).fadeIn('ease-in');
+				$('#loading-overlay').css({
+					display: 'none'
+				});
+			},
+			error : function(error, http) {
+				$('#loading-overlay').css({
+					display: 'none'
+				});
 			}
 		});
 	});
@@ -138,9 +152,13 @@
 			$('#nav-rightbar').removeClass('col-sm-10');
 			$('#nav-rightbar').addClass('col-sm-12');
 			$('#nav-rightbar').animate({margin: "0px"}, 400);
+			$('body').scrollTop(0);
 			$(this).removeClass('fg-white');
 			$(this).addClass('theme-fg');
 			$(this).animate({left:"2%"}, 400);
+			 $('html, body').animate({
+			          scrollTop: $('body').offset().top
+			        }, 1000);
 		} else {
 			$('#nav-sidebar').animate({width:"toggle"},400);
 			$('#nav-rightbar').animate({marginLeft: "16.66666667%"}, 400, function (){
@@ -149,7 +167,11 @@
 			});
 			$(this).addClass('fg-white');
 			$(this).removeClass('theme-fg');
+			$('body').scrollTop(0);
 			$(this).animate({left:"12.5%"}, 400);
+			 $('html, body').animate({
+			          scrollTop: $('body').offset().top
+			        }, 1000);
 		}
 	});
 

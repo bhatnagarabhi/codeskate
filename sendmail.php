@@ -40,8 +40,10 @@ $mail->addAddress($email);	   	// Add a recipient
 
 $mail->isHTML(true);  // Set email format to HTML
 
+$baseurl = $_SERVER['SERVER_NAME'];
+
 $bodyContent = '<h1 style="color:#dd5050; font-weight:100;">Codeskate e-mail verification</h1>';
-$bodyContent.= '<p style="font-size:15px;">Dear <span style="font-weight:bold;">'.$fname.'</span>,<br>Thank you for signing up with Codeskate<sup>&copy;</sup>, please click the link to verify your e-mail. <a href="http://localhost/Codeskate/Integrating%20the%20code%20editor/inc/verify_email.php?com_code=';
+$bodyContent.= '<p style="font-size:15px;">Dear <span style="font-weight:bold;">'.$fname.'</span>,<br>Thank you for signing up with Codeskate<sup>&copy;</sup>, please click the link to verify your e-mail. <a href="http://'.$baseurl.'/codeskate/inc/verify_email.php?com_code=';
 $bodyContent.=$com;
 $bodyContent.= '">Click here to verify your e-mail.</a></p>';
 

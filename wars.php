@@ -144,13 +144,25 @@
 		if(div_id==8) {
 			window.location = "inc/logout.php";
 		}
+		$('#loading-overlay').css({
+			display: 'block'
+		});
 		$.ajax({
 			url: 'lib/wars-content.php',
 			type: 'POST',
 			dataType: 'html',
 			data: 'url_id='+div_id,
 			success: function(response, status, http){
+				$('html, body').animate({
+				          scrollTop: $('#nav-rightbar').offset().top
+				        }, 1000);
 				$('#content').hide().html(response).fadeIn('ease-in');
+				$('#loading-overlay').css({
+					display: 'none'
+				});
+			},
+			error:function(error, http){
+
 			}
 		});
 	});
@@ -163,6 +175,9 @@
 			$(this).removeClass('fg-white');
 			$(this).addClass('theme-fg');
 			$(this).animate({left:"2%"}, 400);
+			$('html, body').animate({
+			          scrollTop: $('body').offset().top
+			        }, 1000);
 		} else {
 			$('#nav-sidebar').animate({width:"toggle"},400);
 			$('#nav-rightbar').animate({marginLeft: "16.66666667%"}, 400, function (){
@@ -172,6 +187,9 @@
 			$(this).addClass('fg-white');
 			$(this).removeClass('theme-fg');
 			$(this).animate({left:"12.5%"}, 400);
+			$('html, body').animate({
+			          scrollTop: $('body').offset().top
+			        }, 1000);
 		}
 	});
 

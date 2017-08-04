@@ -13,8 +13,6 @@
 		}
 	</style>
 
-	<p>Hello</p>
-
 <?php 
 	// Requiring the initialization file
 	require_once ("classes/init.php");

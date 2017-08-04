@@ -42,12 +42,12 @@
 					<div class="col-sm-2 medium-font fg-white" >
 						<i class="fa fa-calculator"></i>
 					</div><!-- col-sm-2 -->
-					<div class="col-sm-10 text-left" style="padding-top: 12px;">
+					<div class="col-sm-10 text-right" style="padding-top: 12px;">
 						<span style="font-size: 32px; "><?php echo $total_user_posts; ?></span> Total threads
 					</div><!-- col-sm-8 -->
 				</div><!-- row --><hr style="margin: 0px auto 5px auto;">
 				<footer class="text-right">
-					<ul style="list-style-type: none;" class="fg-white">
+					<ul style="list-style-type: none; padding: 0px;" class="fg-white">
 						<li class="sub-content-link" style="cursor: pointer;" value="1">View all the threads &raquo;</li>
 					</ul>
 				</footer>
@@ -69,12 +69,12 @@
 						<div class="col-sm-2 medium-font" >
 							<i class="fa fa-comments"></i>
 						</div><!-- col-sm-2 -->
-						<div class="col-sm-10 text-left" style="padding-top: 12px;">
+						<div class="col-sm-10 text-right" style="padding-top: 12px;">
 							<span style="font-size: 32px; "><?php echo $total_com_posts; ?></span> Total comments
 						</div><!-- col-sm-8 -->
 				</div><!-- row --><hr style="margin: 0px auto 5px auto;">
 				<footer class="text-right">
-					<ul style="list-style-type: none;" class="fg-white">
+					<ul style="list-style-type: none;  padding: 0px;" class="fg-white">
 						<li style="cursor: pointer;" class="sub-content-link" value="2">View all the comments &raquo;</li>
 					</ul>
 				</footer>

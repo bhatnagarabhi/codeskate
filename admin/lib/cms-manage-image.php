@@ -12,7 +12,7 @@
 
 		<center><div class="col-sm-12" style="margin-top:20px;">
 			<?php 
-				$res	= $db->fetchAllContent(0, 'images');
+				$res	= $db::executeQuery("SELECT img_id, img_title, img_alt, COMPRESS(`img_data`) as img_data FROM `images`");
 				$num_rec_per_page	= 10;
 				$num_content		= mysqli_num_rows($res);
 				$num_pages 		= ceil($num_content/$num_rec_per_page);

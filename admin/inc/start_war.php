@@ -10,7 +10,7 @@
 		$war_question_content = addslashes($_POST['war_question_content']);
 		$db 			= new Database();
 
-		$res 			= $db->addContent(5, 'wars', 'war_language_id', $war_language_id, 'war_win_xp', $war_xp, 'war_question_heading', $war_question , 'war_status', 0, 'war_question_content', $war_question_content);
+		$res 			= $db->addContent(5, 'wars', 'war_language_id', $war_language_id, 'war_win_xp', $war_xp, 'war_question_heading', $war_question , 'war_winner_entry_id', 0, 'war_question_content', $war_question_content);
 		if($res) {
 			array_push($arr, true);
 		} else {

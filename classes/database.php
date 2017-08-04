@@ -158,7 +158,6 @@
 			}else if($mode==7){
 				$query = "INSERT INTO {$table} ({$field1}, {$field2}, {$field3}, {$field4}, {$field5}, {$field6}, {$field7}) VALUES ('".$val1."', '".$val2."' , '".$val3."', '".$val4."' , '".$val5."', '".$val6."', '".$val7."')";
 			}
-			echo $query;
 			return self::executeQuery($query);
 		}
 

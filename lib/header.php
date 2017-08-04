@@ -49,6 +49,12 @@
 	<!-- BOOTSTRAP JS -->
 	<script type="text/javascript" src="js/bootstrap.min.js"></script>
 
+	<div id="loading-overlay">
+		<div id="spinner">
+			<i class="fa fa-spinner fa-spin fa-5x fa-fw"></i>
+		</div><!-- spinner -->
+	</div><!-- loading-overlay -->
+
 	<!-- TOP NAVBAR
 	======================================== -->
 	<!-- NAVBAR
